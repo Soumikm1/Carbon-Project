@@ -402,8 +402,6 @@ describe("Stress Testing", function () {
   describe("Calling Each Function ", function () {
     it("Should call the functions", async function () {
       const { contract, users, orgUser } = await deployContract();
-
-
       const registerUserPromises = users.map((user, index) =>
         contract.connect(user).registerUser({
           first_name: `User${index + 1}`,
@@ -450,7 +448,8 @@ describe("Stress Testing", function () {
       const addProjectTxPromises = addProjectTx.map((each) => each.wait());
       const receipt = await Promise.all(addProjectTxPromises);
       console.log("Point 4");
-      printAccountBalances();
+      printBalance(users.map(each => each.address));
+      printBalance(orgUser.map(each => each.address));
       receipt.forEach((txReceipt, index) => {
         const userIndex = Math.floor(index / 10); // Assuming each user adds exactly 10 projects
         const user = orgUser[userIndex];
@@ -462,7 +461,7 @@ describe("Stress Testing", function () {
         }
       });
 
-      console.log(userProjectMap);
+      // console.log(userProjectMap);
 
       let count = 1;
       let editProjectPromises: Promise<any>[] = [];
@@ -485,7 +484,8 @@ describe("Stress Testing", function () {
         });
       });
       console.log("Point 5");
-      printAccountBalances();
+      printBalance(users.map(each => each.address));
+      printBalance(orgUser.map(each => each.address));
       const editProjectTx = await Promise.all(editProjectPromises);
       const editProjectTxPromises = editProjectTx.map((each) => each.wait());
       await Promise.all(editProjectTxPromises);
@@ -529,7 +529,8 @@ describe("Stress Testing", function () {
       const addProjectToCartTxPromises = addProjectToCartTx.map((each) => each.wait());
       await Promise.all(addProjectToCartTxPromises);
       console.log("Point 7");
-      printAccountBalances();
+      printBalance(users.map(each => each.address));
+      printBalance(orgUser.map(each => each.address));
       let makeCartEmptyPromises: any[] = [];
       users.forEach((user, index) => {
         let projectCount = 1;
@@ -548,7 +549,8 @@ describe("Stress Testing", function () {
       const makeCartEmptyTxPromises = makeCartEmptyTx.map((each) => each.wait());
       await Promise.all(makeCartEmptyTxPromises);
       console.log("Point 8");
-      printAccountBalances();
+      printBalance(users.map(each => each.address));
+      printBalance(orgUser.map(each => each.address));
       let addProjectToCartPromisesAgain: any[] = [];
       users.forEach((user, index) => {
         let projectCount = 1;

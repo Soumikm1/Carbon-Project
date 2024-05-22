@@ -165,7 +165,7 @@ contract Functionality is Database {
     }
 
     function editProject(DataTypes.EditProjectType memory args) external validateOrg(msg.sender)  returns (bool) {
-        console.log("Edit project !!!", projectList[args.id].org_id, msg.sender);
+        // console.log("Edit project !!!", projectList[args.id].org_id, msg.sender);
         require(bytes(projectList[args.id].name).length != 0,"Project doesn't exist. 1");
         require(projectList[args.id].org_id == msg.sender,"Project doesn't exist. 2");
         require(bytes(args.name).length != 0, "Name cannot be empty");
