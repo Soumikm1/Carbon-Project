@@ -360,7 +360,7 @@ const emissions = [
 describe("Stress Testing", function () {
   this.timeout(120000); // Set the timeout to 120 seconds for this suite
   let contract: Functionality;
-  const Web3 = require('web3');
+  // const Web3 = require('web3');
   async function printAccountBalances() {
     const accounts = await ethers.getSigners();
     const provider = ethers.provider;
