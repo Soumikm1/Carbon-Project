@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.0;
 
 import "./DataTypes.sol";
 
@@ -44,7 +44,7 @@ contract Database {
         userList[newUser.user_address] = newUser;
         emit UserRegistered(
             newUser.user_address,
-            string.concat(newUser.first_name, newUser.last_name)
+            string(abi.encodePacked(newUser.first_name, newUser.last_name))
         );
     }
 
