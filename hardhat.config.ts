@@ -24,7 +24,13 @@ const accounts = [
 ];
 
 module.exports = {
-  solidity: "0.8.4",
+  solidity: "0.8.0",
+  settings: {
+    optimizer: {
+      enabled: true,
+      runs: 5,
+    },
+  },
   networks: {
     besu: {
       url: "http://127.0.0.1:8545",
