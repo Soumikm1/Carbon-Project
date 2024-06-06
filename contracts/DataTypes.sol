@@ -84,7 +84,7 @@ library  DataTypes {
         uint256 to;
     }
 
-   
+
 
     struct RegisterOrgType {
         string  name;
@@ -109,7 +109,7 @@ library  DataTypes {
         uint256 creditQuantity;
     }
 
-    
+
 
     struct AddProjectToCartType{
         uint256 projectId;

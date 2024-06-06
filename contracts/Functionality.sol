@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./Database.sol";
-import "@ganache/console.log/console.sol";
 
+import "./Database.sol";
+import "hardhat/console.sol";
 contract Functionality is Database {
 
     // Utility function 
@@ -29,7 +29,6 @@ contract Functionality is Database {
         );
         _;
     }
-
     modifier validateOrg(address addr) {
         require(
             bytes(organizationList[addr].name).length != 0,
@@ -165,7 +164,7 @@ contract Functionality is Database {
     }
 
     function editProject(DataTypes.EditProjectType memory args) external validateOrg(msg.sender)  returns (bool) {
-        // console.log("Edit project !!!", projectList[args.id].org_id, msg.sender);
+        console.log("Edit project !!!", projectList[args.id].org_id, msg.sender);
         require(bytes(projectList[args.id].name).length != 0,"Project doesn't exist. 1");
         require(projectList[args.id].org_id == msg.sender,"Project doesn't exist. 2");
         require(bytes(args.name).length != 0, "Name cannot be empty");

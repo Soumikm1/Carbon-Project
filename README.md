@@ -11,13 +11,3 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```
-Run Ganache Client
-```shell
- ganache-cli --defaultBalanceEther 10000
- -a 15 -l 1000000000000 --verbose
-```
-Run to auto-connect to Ganache
-```shell
- npx hardhat --network localhost test
-```
-# Carbon-Project

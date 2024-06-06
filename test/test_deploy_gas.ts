@@ -364,10 +364,10 @@ describe("Gas Consumption", function () {
     const accounts = await ethers.getSigners();
     const instance = await ethers.getContractFactory("Functionality");
     const contract = await instance.deploy();
-  
+
     // Set up any necessary state or perform any required actions
     // ...
-  
+
     return {
       contract,
       users: accounts.slice(1, 4),
