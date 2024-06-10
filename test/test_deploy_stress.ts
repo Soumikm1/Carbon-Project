@@ -359,6 +359,7 @@ const emissions = [
 
 describe("Stress Testing", function () {
   this.timeout(120000); // Set the timeout to 120 seconds for this suite
+  console.time('Smart Contract Simulation');
   let contract: Functionality;
   // const Web3 = require('web3');
   async function printAccountBalances() {
@@ -583,6 +584,7 @@ describe("Stress Testing", function () {
       console.log("Point 15 !!!");
       await Promise.all(buyCreditsTxPromises);
       console.log("Point 16 !!!");
+      console.timeEnd('Smart Contract Simulation');
       printBalance(users.map(each => each.address));
       printBalance(orgUser.map(each => each.address));
     });
