@@ -574,7 +574,7 @@ describe("Stress Testing", function () {
       await Promise.all(addProjectToCartAgainTxPromises);
       console.log("Point 12 !!!");
       const buyCreditsFromCartPromises = users.map((user, _index) =>
-        contract.connect(user).buyCreditsFromCart({ value: 50 })
+        contract.connect(user).buyCreditsFromCart({ value: 50 , gasLimit: 300000000})
       );
       console.log("Point 13 !!!");
       const buyCreditsTx = await Promise.all(buyCreditsFromCartPromises);
