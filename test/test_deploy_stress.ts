@@ -521,7 +521,7 @@ describe("Stress Testing", function () {
               contract.connect(user).addProjectToCart({
                 quantity: 10,
                 projectId: projectCount
-              })
+              }, {gasLimit: 3000000000})
             );
             projectCount = projectCount + 1;
           });
