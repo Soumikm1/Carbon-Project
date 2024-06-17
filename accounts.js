@@ -1,8 +1,8 @@
-import { ethers } from "ethers";
-import fs from "fs";
+const ethers = require('ethers');
+const fs = require('fs');
 
 const numAccounts = 20;
-const accounts: { privateKey: string; publicKey: string }[] = [];
+const accounts = [];
 
 // Generate 20 accounts
 for (let i = 0; i < numAccounts; i++) {
@@ -15,7 +15,7 @@ for (let i = 0; i < numAccounts; i++) {
 
 // Write accounts to a file
 fs.writeFileSync(
-  "accounts.json",
+  'accounts.json',
   JSON.stringify(accounts, null, 2),
-  "utf-8"
+  'utf-8'
 );
