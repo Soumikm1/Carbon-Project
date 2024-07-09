@@ -1,0 +1,80 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "SimpleStorage",
+  "sourceName": "contracts/SimpleStorage.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "initVal",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "stored",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "get",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "retVal",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "x",
+          "type": "uint256"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "storedData",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506040516101d93803806101d983398101604081905261002f91610070565b7fc9db20adedc6cf2b5d25252b101ab03e124902a73fcb12b753f3d1aaa2d8f9f53382604051610060929190610088565b60405180910390a16000556100a1565b600060208284031215610081578081fd5b5051919050565b6001600160a01b03929092168252602082015260400190565b610129806100b06000396000f3fe6080604052348015600f57600080fd5b5060043610603c5760003560e01c80632a1afcd914604157806360fe47b114605b5780636d4ce63c14606c575b600080fd5b60476072565b6040516052919060ea565b60405180910390f35b606a606636600460ba565b6078565b005b604760b4565b60005481565b7fc9db20adedc6cf2b5d25252b101ab03e124902a73fcb12b753f3d1aaa2d8f9f5338260405160a792919060d1565b60405180910390a1600055565b60005490565b60006020828403121560ca578081fd5b5035919050565b6001600160a01b03929092168252602082015260400190565b9081526020019056fea2646970667358221220fee210a348a3af331739d4bd0988b6a97b93feccf01e1e070c02e0cc480489dc64736f6c63430008000033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610603c5760003560e01c80632a1afcd914604157806360fe47b114605b5780636d4ce63c14606c575b600080fd5b60476072565b6040516052919060ea565b60405180910390f35b606a606636600460ba565b6078565b005b604760b4565b60005481565b7fc9db20adedc6cf2b5d25252b101ab03e124902a73fcb12b753f3d1aaa2d8f9f5338260405160a792919060d1565b60405180910390a1600055565b60005490565b60006020828403121560ca578081fd5b5035919050565b6001600160a01b03929092168252602082015260400190565b9081526020019056fea2646970667358221220fee210a348a3af331739d4bd0988b6a97b93feccf01e1e070c02e0cc480489dc64736f6c63430008000033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
