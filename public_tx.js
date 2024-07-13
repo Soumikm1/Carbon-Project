@@ -45,7 +45,7 @@ const rawTxOptions = {
   value: "0x00",
   data: "0x" + contractBin.toString('hex') + contractConstructorInit, // contract binary appended with initialization value
   gasPrice: "0x0", //ETH per unit of gas
-  gasLimit: "0x24A22", //max number of gas units the tx is allowed to use
+  gas: "0x16E554", //max number of gas units the tx is allowed to use
   chainId: web3.eth.net.getId(), //network ID
 };
 console.log("Creating transaction...");
