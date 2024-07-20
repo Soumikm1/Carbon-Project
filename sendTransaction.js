@@ -56,4 +56,13 @@ async function main() {
     console.log('Receiver balance after:', await getBalance(receiverAddress));
 }
 
-main();
+async function runMultipleTimes() {
+    console.time('Total Execution Time');
+    for (let i = 0; i < 100; i++) {
+        console.log(`\nExecuting round ${i + 1} of 100`);
+        await main();
+    }
+    console.timeEnd('Total Execution Time');
+}
+
+runMultipleTimes().catch(console.error);

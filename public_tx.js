@@ -32,12 +32,12 @@ const contractConstructorInit =
 var txnCount = 0;
 async function main() {
   txnCount = await web3.eth.getTransactionCount(account.address);
-  // console.log(txnCount);
 
   // Continue with your code that depends on txnCount
 }
 
 main().catch(console.error);
+console.log(web3.eth.net.getId());
 const rawTxOptions = {
   nonce: web3.utils.numberToHex(txnCount),
   from: account.address,
@@ -46,11 +46,11 @@ const rawTxOptions = {
   data: "0x" + contractBin.toString('hex') + contractConstructorInit, // contract binary appended with initialization value
   gasPrice: "0x0", //ETH per unit of gas
   gas: "0x16E554", //max number of gas units the tx is allowed to use
-  chainId: web3.eth.net.getId(), //network ID
+  chainId: "1337", //network ID
 };
 console.log("Creating transaction...");
 const tx = new Tx(rawTxOptions, {'name': 'besu'});
-console.log(tx);
+// console.log(tx);
 console.log("Signing transaction...");
 // console.log(typeof(uint8ArrayPrivateKey))
 tx.sign(uint8ArrayPrivateKey);
