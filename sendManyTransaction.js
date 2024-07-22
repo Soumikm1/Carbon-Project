@@ -30,8 +30,8 @@ async function sendTransaction(from, to, amount, node) {
         'value': web3.utils.toWei(amount.toString(), 'ether'),
         'gas': 21000,
         'nonce': nonce,
-        'gasPrice': 0, // Set the gas price to 0
-        'chainId': 1337 // Add this if you're not using the default (mainnet)
+        'gasPrice': 0, // Set gas price = 0
+        'chainId': 1337
     };
 
     const signedTx = await web3.eth.accounts.signTransaction(transaction, from.privateKey);
